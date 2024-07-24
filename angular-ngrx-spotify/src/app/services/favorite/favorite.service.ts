@@ -4,9 +4,9 @@ import {
   addFavoriteAction,
   removeFavoriteAction,
   resetFavoritesAction,
-} from 'src/app/store/favorite/favorite.actions';
-import { selectorFavoriteState } from 'src/app/store/favorite/favorite.selectors';
-import { Item, TrackList } from 'src/app/store/favorite/favorite.type';
+} from '@store/favorite/favorite.actions';
+import { selectorFavoriteState } from '@store/favorite/favorite.selectors';
+import { Item, TrackList } from '@store/favorite/favorite.type';
 import { Observable } from 'rxjs';
 
 @Injectable({

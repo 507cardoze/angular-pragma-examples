@@ -1,5 +1,8 @@
 import { NgModule } from "@angular/core";
 import { CommonModule } from '@angular/common';
+import { AtomsModule } from "@components/atoms/atoms.module";
+import { RouterModule } from "@angular/router";
+
 import { SearchBarComponent } from '@components/molecules/search-bar/search-bar.component';
 import { AvatarImgComponent } from '@components/molecules/avatar-img/avatar-img.component';
 import { ProfileInfoComponent } from '@components/molecules/profile-info/profile-info.component';
@@ -10,8 +13,7 @@ import { NavbarButtonCloseComponent } from '@components/molecules/navbar-button-
 import { NavbarButtonOpenComponent } from '@components/molecules/navbar-button-open/navbar-button-open.component';
 import { HeaderLogoComponent } from '@components/molecules/header-logo/header-logo.component';
 import { BottomButtonsComponent } from '@components/molecules/bottom-buttons/bottom-buttons.component';
-import { AtomsModule } from "@components/atoms/atoms.module";
-import { RouterModule } from "@angular/router";
+import { TrackItemsComponent } from '@components/molecules/track-items/track-items.component';
 
 @NgModule({
     declarations: [
@@ -25,6 +27,7 @@ import { RouterModule } from "@angular/router";
         NavbarButtonOpenComponent,
         HeaderLogoComponent,
         BottomButtonsComponent,
+        TrackItemsComponent,
     ],
     imports: [
         RouterModule,
@@ -42,6 +45,7 @@ import { RouterModule } from "@angular/router";
         NavbarButtonOpenComponent,
         HeaderLogoComponent,
         BottomButtonsComponent,
+        TrackItemsComponent,
     ]
 })
 

@@ -5,6 +5,7 @@ import { UserService } from '@services/user/user.service';
 import { GlobalService } from '@services/global.service';
 import { SearchTrackService } from '@services/searchTrack/search-track.service';
 import { FavoriteService } from '@services/favorite/favorite.service';
+import { provideHttpClient } from "@angular/common/http";
 
 @NgModule({
     providers: [
@@ -12,7 +13,8 @@ import { FavoriteService } from '@services/favorite/favorite.service';
         AuthService,
         UserService,
         SearchTrackService,
-        FavoriteService
+        FavoriteService,
+        provideHttpClient()
     ],
 })
 

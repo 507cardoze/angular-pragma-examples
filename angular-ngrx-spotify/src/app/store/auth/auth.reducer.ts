@@ -4,7 +4,7 @@ import {
   loginFunction,
   LogoutAction,
   logoutFunction,
-} from './auth.actions';
+} from '@store/auth/auth.actions';
 import { AuthStateType } from '@store/auth/auth.type';
 
 export const initialState: AuthStateType = {

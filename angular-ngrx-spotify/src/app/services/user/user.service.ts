@@ -1,12 +1,12 @@
 import { Injectable } from '@angular/core';
 import { Store } from '@ngrx/store';
-import { GlobalService } from '../global.service';
+import { GlobalService } from '@services/global.service';
 import {
   resetUserInfoAction,
   setUserInfoAction,
-} from '../../store/user/user.actions';
-import { UserStateType } from '../../store/user/user.type';
-import { selectorUserState } from 'src/app/store/user/user.selector';
+} from '@store/user/user.actions';
+import { UserStateType } from '@store/user/user.type';
+import { selectorUserState } from '@store/user/user.selector';
 import { Observable } from 'rxjs';
 
 @Injectable({

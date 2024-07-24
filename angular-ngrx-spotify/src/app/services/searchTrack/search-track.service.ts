@@ -1,13 +1,13 @@
 import { Injectable } from '@angular/core';
 import { Store } from '@ngrx/store';
-import { Item } from 'src/app/store/favorite/favorite.type';
+import { Item } from '@store/favorite/favorite.type';
 import {
   loadMoreTrackListAction,
   loadTrackListAction,
-} from 'src/app/store/search-track/searchTrack.actions';
-import { selectorSearchTrackState } from 'src/app/store/search-track/searchTrack.selector';
-import { searchTrackType } from 'src/app/store/search-track/searchTrack.type';
-import { GlobalService } from '../global.service';
+} from '@store/search-track/searchTrack.actions';
+import { selectorSearchTrackState } from '@store/search-track/searchTrack.selector';
+import { searchTrackType } from '@store/search-track/searchTrack.type';
+import { GlobalService } from '@services/global.service';
 import { Observable } from 'rxjs';
 
 @Injectable({

@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { AuthService } from './auth/auth.service';
-import { Subscription } from 'rxjs';
+import { firstValueFrom, Subscription } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
@@ -19,8 +19,8 @@ export class GlobalService {
   }
 
   async handleRequestError(err: any): Promise<any> {
-    const accessTokenExpired: string = 'The access token expired';
-    const accessTokenInvalid: string = 'Invalid access token';
+    const accessTokenExpired = 'The access token expired';
+    const accessTokenInvalid = 'Invalid access token';
 
     const { message } = err.error.error;
 
@@ -34,17 +34,17 @@ export class GlobalService {
     }
   }
 
-  async getQuery(query: string): Promise<any> {
+  async getQuery(query: string) {
     if (!this.accessToken$) return this.authservice.spotifyImplicitGrantLogin();
 
-    const baseUrl: string = `https://api.spotify.com/v1/${query}`;
-    const headers: HttpHeaders = new HttpHeaders({
+    const baseUrl = `https://api.spotify.com/v1/${query}`;
+    const headers = new HttpHeaders({
       Authorization: `Bearer ${this.accessToken$}`,
     });
-    const options: { headers: HttpHeaders } = { headers };
+    const options = { headers };
     try {
-      return await this.http.get<Promise<any>>(baseUrl, options).toPromise();
-    } catch (err: any) {
+      return await firstValueFrom(this.http.get<Promise<any>>(baseUrl, options));
+    } catch (err) {
       await this.handleRequestError(err);
     }
   }

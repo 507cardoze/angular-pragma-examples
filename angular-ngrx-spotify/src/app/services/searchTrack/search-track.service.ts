@@ -1,20 +1,22 @@
 import { Injectable } from '@angular/core';
 import { Store } from '@ngrx/store';
-import { Item } from '@store/favorite/favorite.type';
+import { Observable } from 'rxjs';
+
+import type { Item } from '@store/favorite/favorite.type';
+import type { searchTrackType } from '@store/search-track/searchTrack.type';
+
 import {
   loadMoreTrackListAction,
   loadTrackListAction,
 } from '@store/search-track/searchTrack.actions';
 import { selectorSearchTrackState } from '@store/search-track/searchTrack.selector';
-import { searchTrackType } from '@store/search-track/searchTrack.type';
-import { GlobalService } from '@services/global.service';
-import { Observable } from 'rxjs';
+import { HttpService } from '@app/services/http.service';
 
 @Injectable({
   providedIn: 'root',
 })
 export class SearchTrackService {
-  constructor(private globalservice: GlobalService, private store: Store) {}
+  constructor(private httpservice: HttpService, private store: Store) {}
 
   querySpotifyForTracks(
     query: string,
@@ -25,7 +27,7 @@ export class SearchTrackService {
 
     const q: string = `search?q=${query}&type=${type}&market=${market}&limit=${limit}&offset=${offset}`;
 
-    return this.globalservice.getQuery(q);
+    return this.httpservice.getQuery(q);
   }
 
   loadTrackList(trackList: Item[]): void {

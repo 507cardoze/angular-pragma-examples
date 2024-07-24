@@ -3,13 +3,15 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { Store } from '@ngrx/store';
 import { map } from 'rxjs/operators';
 import { Subscription, Observable } from 'rxjs';
+
 import { LoginAction, LogoutAction } from '@store/auth/auth.actions';
 import { selectorAuthState } from '@store/auth/auth.selector';
-import { environment } from '@env/environment';
-import { AuthStateType, TokenResponseType } from '@store/auth/auth.type';
+import type { AuthStateType, TokenResponseType } from '@store/auth/auth.type';
 import { resetUserInfoAction } from '@store/user/user.actions';
 import { resetFavoritesAction } from '@store/favorite/favorite.actions';
 import { resetSearchTrackAction } from '@store/search-track/searchTrack.actions';
+
+import { environment } from '@env/environment';
 
 @Injectable({
   providedIn: 'root',

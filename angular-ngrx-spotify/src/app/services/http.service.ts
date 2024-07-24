@@ -1,12 +1,12 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { AuthService } from './auth/auth.service';
+import { AuthService } from '@services/auth/auth.service';
 import { firstValueFrom, Subscription } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
 })
-export class GlobalService {
+export class HttpService {
   accessToken$: string | null = null;
   accessTokenSubcription$: Subscription = new Subscription();
 

@@ -1,13 +1,13 @@
 import { Injectable } from '@angular/core';
 import { Store } from '@ngrx/store';
+import { Observable } from 'rxjs';
 import {
   addFavoriteAction,
   removeFavoriteAction,
   resetFavoritesAction,
 } from '@store/favorite/favorite.actions';
 import { selectorFavoriteState } from '@store/favorite/favorite.selectors';
-import { Item, TrackList } from '@store/favorite/favorite.type';
-import { Observable } from 'rxjs';
+import type { Item, TrackList } from '@store/favorite/favorite.type';
 
 @Injectable({
   providedIn: 'root',

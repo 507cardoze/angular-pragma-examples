@@ -1,11 +1,11 @@
 import { Injectable } from '@angular/core';
 import { Store } from '@ngrx/store';
-import { GlobalService } from '@services/global.service';
+import { HttpService } from '@app/services/http.service';
 import {
   resetUserInfoAction,
   setUserInfoAction,
 } from '@store/user/user.actions';
-import { UserStateType } from '@store/user/user.type';
+import type { UserStateType } from '@store/user/user.type';
 import { selectorUserState } from '@store/user/user.selector';
 import { Observable } from 'rxjs';
 
@@ -13,10 +13,10 @@ import { Observable } from 'rxjs';
   providedIn: 'root',
 })
 export class UserService {
-  constructor(private globalservice: GlobalService, private store: Store) {}
+  constructor(private httpservice: HttpService, private store: Store) {}
 
   getSpotifySession(): Promise<UserStateType> {
-    return this.globalservice.getQuery('me');
+    return this.httpservice.getQuery('me');
   }
 
   setUserInfo(user: UserStateType): void {

@@ -8,7 +8,7 @@ import { searchTrackReducer } from '@store/search-track/searchTrack.reducer';
 import { metaReducers } from '@store/store.persist';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 
-const reducers = {
+export const reducers = {
   auth: authReducer,
   user: userReducer,
   favorite: favoriteReducer,

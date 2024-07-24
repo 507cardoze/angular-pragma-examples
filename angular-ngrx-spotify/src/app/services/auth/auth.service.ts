@@ -63,7 +63,6 @@ export class AuthService {
   }
 
   decodeUrlFragment(fragment: string | null): TokenResponseType | null {
-    console.log(fragment);
     if (fragment) {
       let authObject = fragment.split('&').map((item) => item.split('='));
       return {

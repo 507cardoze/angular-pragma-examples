@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { AuthService } from 'src/app/services/auth/auth.service';
+import { AuthService } from '@services/auth/auth.service';
 import { Router } from '@angular/router';
 
 @Component({
@@ -7,14 +7,9 @@ import { Router } from '@angular/router';
 	templateUrl: './login-page.component.html',
 })
 export class LoginPageComponent {
-	constructor(private authservice: AuthService, private router: Router) {
-		this.authservice
-			.isAuthorized()
-			.subscribe((isAuthorized) => (this.$isAuthorized = isAuthorized));
-	}
+	constructor(private authservice: AuthService, private router: Router) {}
 
 	logoType = 'full';
-	$isAuthorized: boolean = false;
 
 	spotifyLogin(): void {
 		this.authservice.spotifyImplicitGrantLogin();
@@ -25,8 +20,13 @@ export class LoginPageComponent {
 	}
 
 	ngOnInit(): void {
-		if (this.$isAuthorized) this.redirectoToHome();
-		this.authservice.handleImplicitGrantError();
-		this.authservice.handleImplicitGrantSuccess();
+		this.authservice.isAuthorized().subscribe((isAuthorized) => {
+			if (isAuthorized) {
+				this.redirectoToHome();
+			} else {
+				this.authservice.handleImplicitGrantError();
+				this.authservice.handleImplicitGrantSuccess();
+			}
+		});
 	}
 }

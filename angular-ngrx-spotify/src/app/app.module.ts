@@ -1,12 +1,11 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
-// import { RouterModule } from '@angular/router';
 //modules
 import { AppRoutingModule } from '@app/app-routing.module';
 import { AppStoreModule } from '@store/store.module';
 import { AppStoreDevtoolsModule } from '@store/dev-tools/devTools.module';
-import { HttpClientModule } from '@angular/common/http';
+import { provideHttpClient } from '@angular/common/http';
 import { ComponentsModule } from '@components/components.module';
 //components
 import { AppComponent } from './app.component';
@@ -30,10 +29,10 @@ import { ServicesModule } from '@services/services.module';
 		FormsModule,
 		AppStoreModule,
 		AppStoreDevtoolsModule,
-		HttpClientModule,
 		ComponentsModule,
 		ServicesModule,
 	],
+	providers: [provideHttpClient()],
 	bootstrap: [AppComponent],
 })
 export class AppModule {}

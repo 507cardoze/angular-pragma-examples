@@ -1,15 +1,15 @@
 import { Component } from '@angular/core';
-import { UserService } from 'src/app/services/user/user.service';
+import { UserService } from '@services/user/user.service';
 import { Subscription } from 'rxjs';
-import { UserStateType } from 'src/app/store/user/user.type';
+import { UserStateType } from '@store/user/user.type';
 import {
   optionsType,
   SearchTrackService,
-} from 'src/app/services/searchTrack/search-track.service';
-import { Item } from 'src/app/store/favorite/favorite.type';
-import { FavoriteService } from 'src/app/services/favorite/favorite.service';
+} from '@services/searchTrack/search-track.service';
+import { Item } from '@store/favorite/favorite.type';
+import { FavoriteService } from '@services/favorite/favorite.service';
 import { Store } from '@ngrx/store';
-import { resetSearchTrackAction } from 'src/app/store/search-track/searchTrack.actions';
+import { resetSearchTrackAction } from '@store/search-track/searchTrack.actions';
 
 @Component({
   selector: 'app-home-page',

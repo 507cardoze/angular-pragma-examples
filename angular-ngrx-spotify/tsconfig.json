@@ -32,7 +32,6 @@
       "@services/*": ["src/app/services/*"],
       "@guards/*": ["src/app/guards/*"],
       "@components/*": ["src/app/components/*"],
-      "@assets/*": ["src/app/assets/*"],
       "@pages/*": ["src/app/pages/*"],
     },
     "lib": [

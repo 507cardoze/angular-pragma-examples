@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { Item } from 'src/app/store/favorite/favorite.type';
 import { Subscription } from 'rxjs';
-import { FavoriteService } from 'src/app/services/favorite/favorite.service';
+import { FavoriteService } from '@services/favorite/favorite.service';
 
 @Component({
   selector: 'app-favorite-page',

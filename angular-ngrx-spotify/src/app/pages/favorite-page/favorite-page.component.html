@@ -1,7 +1,7 @@
 <app-layout>
     <app-page-title>Mis Favoritos ({{favoriteList.length}})</app-page-title>
     <app-page-subtitle *ngIf="!favoriteList.length; else elseBlock">No tienes favoritos, ve a la <a
-            routerLink="/home">pagina de busqueda</a>
+            routerLink="/home">pagina de búsqueda</a>
         para
         agregar alguno</app-page-subtitle>
     <ng-template #elseBlock>
